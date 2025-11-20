@@ -1,22 +1,40 @@
+/*
+Seletores de estilizacao
+*/
 body{
     margin: 0px;
     padding: 0px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: url(../images/pexels-juanpphotoandvideo-1242348.jpg) no-repeat left top;
+    background-size: cover;
 }
 
 header{
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.712);
     color: white;
     font-size: 1.5rem;
     padding: 25px;
+    justify-content: center;
 }
 
 main{
-    padding: 0px 20px 0px 20px;
+    padding: 5px 20px 5px 20px;
+}
+
+.background-white{
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 20px;
 }
 
 h1{
     text-align: center;
+}
+
+.hardskills{
+    height: 100px;
+    width: 100px;
 }
 
 footer{
@@ -24,6 +42,7 @@ footer{
     color: white;
     font-size: 1rem;
     text-align: center;
+    font-weight: bolder;
     margin-top: 25px;
     padding: 20px;
 }
@@ -35,11 +54,23 @@ footer{
     padding: 0;
 }
 
+#titulo2{
+    background-color: rgba(92, 92, 92, 0.486);
+    color: white;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.titulos{
+    font-weight: bold;
+    font-size: 18px;
+}
+
 .paragrafos{
-    color: rgba(0, 0, 0, 0.438);
+    color: rgba(0, 0, 0);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
-    text-align: right;
+    text-align: left;
 }
 
 .table{
