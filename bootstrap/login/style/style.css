@@ -1,0 +1,4 @@
+.background-image{
+    background: url(../images/login-background.avif) center bottom no-repeat;
+    background-size: contain;
+}
