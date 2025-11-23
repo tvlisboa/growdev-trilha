@@ -15,7 +15,6 @@ document.getElementById('transactions-button').addEventListener('click', functio
 document.getElementById("transaction-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-
     const value = parseFloat(document.getElementById('value-input').value);
     const description = document.getElementById('description-input').value;
     const date = document.getElementById('date-input').value;
