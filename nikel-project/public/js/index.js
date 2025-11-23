@@ -1,127 +1,32 @@
-const nome1 = "Thiago Duarte";
-let nome2 = "";
+const myModal = new bootstrap.Modal("#register-Modal");
 
-let pessoaDefault = {
-    name: "Thiago Duarte",
-    age: "32",
-    weight: "75",
-    height: "175",
-    job: "Full - Stack Developer"
-}
+//Usuario criando conta
+document.getElementById("create-form").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-/**
- * Criação de uma lista de pessoas
- */
+    const email = document.getElementById("email-create-input").value;
+    const password = document.getElementById("password-create-input").value;
 
-let nomes = ["Thiago", "Victoria", "Marcos", "Luan Henrique", "Pedro Silva"];
-let people = [
-    {
-        name: "Thiago Duarte",
-        age: "32",
-        weight: "75",
-        height: "175",
-        job: "Full - Stack Developer"
-    },
-    {
-        name: "Roberto Carlos",
-        age: "45",
-        weight: "90",
-        height: "180",
-        job: "Back End Developer"
-    },
-    {
-        name: "Maria Victoria",
-        age: "21",
-        weight: "60",
-        height: "156",
-        job: "Trainee"
-    },
-    {
-        name: "Guilherme",
-        age: "25",
-        weight: "80",
-        height: "190",
-        job: "Product Owner"
-    },
-    {
-        name: "Livia Andrade",
-        age: "18",
-        weight: "50",
-        height: "150",
-        job: "Estagiaria"
+    if (email.length < 5) {
+        alert("Email invalido! Verifique o campo digitado e tente novamente.")
+        return;
     }
-];
 
-console.log("Valor inicial");
-console.log(nome1);
-console.log(nome2);
+    if (password.length < 8) {
+        alert("Senha deve ter no minimo 8 digitos, tente novamente");
+        return;
+    }
 
-nome2 = "Thiago D Lisboa";
-console.log(nome2);
+    saveAccount({
+        login: email,
+        password: password,
+        transactions: []
+    });
+    myModal.hide();
+    alert("Conta criada com sucesso.")
+});
 
-
-function alterarNome() {
-    nome2 = "Thiago Duarte Lisboa";
-    console.log("Valor alterado da variavel");
-    console.log(nome2)
+//salvar cadastro do usuario
+function saveAccount(data) {
+    localStorage.setItem(data.login, JSON.stringify(data));
 }
-
-function receberAlterarNome(novoNome) {
-    nome2 = novoNome;
-    console.log("Valor recebido e alterado:");
-    console.log(nome2);
-}
-
-function imprimirPessoa(pessoa) {
-    console.log("Name user")
-    console.log(pessoa.name);
-
-    console.log("Age user")
-    console.log(pessoa.age);
-
-    console.log("Weight user")
-    console.log(pessoa.weight);
-
-    console.log("Heigh user")
-    console.log(pessoa.height);
-
-
-    console.log("Job user")
-    console.log(pessoa.job);
-}
-
-function adicionarPessoa(pessoa) {
-    people.push(pessoa)
-}
-
-adicionarPessoa({
-    name: "Bruno Dias",
-    age: "30",
-    weight: "80",
-    height: "180",
-    job: "DBA - Analista de Dados Remoto"
-})
-
-alterarNome();
-receberAlterarNome("Ronaldo Jose Duarte Lisboa")
-receberAlterarNome("Ricardo Lisboa")
-receberAlterarNome("Valeria de Fatima")
-receberAlterarNome("Olga Ferreira")
-receberAlterarNome("Luis henrique")
-
-/**
- * Imprimir os dados do objeto pessoa
- */
-
-imprimirPessoa(pessoaDefault)
-
-console.log(nomes.length)
-console.log(nomes)
-console.log(nomes[1])
-console.log(nomes[4])
-
-
-console.log(people)
-console.log(people[1])
-console.log(people[2])
-console.log(people[5])

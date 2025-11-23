@@ -69,7 +69,7 @@
                         <!--Criar conta-->
                         <div class="row">
                             <div class="col">
-                                <p class="text-center mt-2 form-text" data-bs-toggle="modal"
+                                <p id="link-conta" class="text-center mt-2 form-text" data-bs-toggle="modal"
                                     data-bs-target="#register-Modal">Ainda não tem conta ? <span
                                         class="link-default">Criar
                                         conta.</span></p>
@@ -111,13 +111,13 @@
                             <div class="mb-3">
                                 <label for="email-create-input" class="form-label">E-mail</label>
                                 <input type="email" class="form-control" id="email-create-input"
-                                    aria-describedby="emailHelp">
+                                    aria-describedby="emailHelp" required>
                                 <div id="emailHelp" class="form-text">Insira seu e-mail para cadastro.
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="password-create-input" class="form-label">Senha</label>
-                                <input type="password" class="form-control" id="password-create-input">
+                                <input type="password" class="form-control" id="password-create-input" required>
                                 <div id="emailHelp" class="form-text">Insira uma senha para cadastro, minimo 8 digitos
                                 </div>
                             </div>
