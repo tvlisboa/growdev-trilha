@@ -1,6 +1,35 @@
 const myModal = new bootstrap.Modal("#register-Modal");
+const session = localStorage.getItem("session");
+let logged = sessionStorage.getItem("logged");
 
-//Usuario criando conta
+checkLogged();
+
+//Logar no Sistema
+document.getElementById("login-forms").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email-input").value;
+    const password = document.getElementById("password-input").value;
+    const checkSession = document.getElementById("session-input").checked;
+    const account = getAccount(email);
+
+    if (!account) {
+        alert("Verifique o usuário ou senha informados.")
+    }
+
+    if (account) {
+        if (account.password !== password) {
+            alert("Verifique o usuário ou senha informados.")
+            return;
+        }
+
+        saveSession(email, checkSession);
+
+        window.location.href = "home.html";
+    }
+})
+
+//Criação de conta
 document.getElementById("create-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -22,11 +51,40 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
         password: password,
         transactions: []
     });
+
     myModal.hide();
     alert("Conta criada com sucesso.")
 });
 
+function checkLogged() {
+    if (session) {
+        session.setItem("logged", session);
+        logged = session;
+    }
+    if (logged) {
+        saveSession(logged, session);
+        window.location.href = "home.html";
+    }
+}
+
 //salvar cadastro do usuario
 function saveAccount(data) {
     localStorage.setItem(data.login, JSON.stringify(data));
+}
+
+function saveSession(data, saveSession) {
+    if (saveSession) {
+        localStorage.setItem("session", data);
+    }
+    sessionStorage.setItem("logged", data);
+}
+
+//transformando uma string em um objeto
+function getAccount(key) {
+    const account = localStorage.getItem(key);
+
+    if (account) {
+        return JSON.parse(account);
+    }
+    return "";
 }
