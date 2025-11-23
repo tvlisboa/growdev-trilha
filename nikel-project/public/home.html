@@ -11,7 +11,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
-<!--Tela de login-->
+<!--Tela de lancamentos-->
 
 <body id="app">
 
@@ -120,6 +120,7 @@
                     </div>
                 </div>
             </div>
+            <!--Botao de lancamento-->
             <button class="btn button-float" data-bs-toggle="modal" data-bs-target="#transaction-Modal"><i
                     class="bi bi-plus"></i></button>
         </div>
@@ -130,30 +131,42 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Lançamento</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar Lançamentos</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <!--Corpo do modal para lancamento-->
-                    <form id="create-form">
+                    <form id="transaction-form">
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label for="email-create-input" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="email-create-input"
-                                    aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">Insira seu e-mail para cadastro.
-                                </div>
+                                <label for="value-input" class="form-label">Valor do lançamento</label>
+                                <input type="number" class="form-control" id="value-input" aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
-                                <label for="password-create-input" class="form-label">Senha</label>
-                                <input type="password" class="form-control" id="password-create-input">
-                                <div id="emailHelp" class="form-text">Insira uma senha para cadastro, minimo 8 digitos
+                                <label for="description-input" class="form-label">Descrição do lançamento</label>
+                                <input type="text" class="form-control" id="description-input">
+                            </div>
+                            <div class="mb-3">
+                                <label for="date-input" class="form-label">Data de lançamento</label>
+                                <input type="date" class="form-control" id="date-input">
+                            </div>
+                            <!--Checkbox de confirmacao-->
+                            <div class="mb-3">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="type-input" id="inlineRadio1"
+                                        value="1" checked>
+                                    <label class="form-check-label" for="inlineRadio1">Entradas</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="type-input" id="inlineRadio2"
+                                        value="2">
+                                    <label class="form-check-label" for="inlineRadio2">Saídas</label>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary button-cancel"
                                 data-bs-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn button-default">Criar conta</button>
+                            <button type="submit" class="btn button-default">Adicionar</button>
                         </div>
                     </form>
                 </div>

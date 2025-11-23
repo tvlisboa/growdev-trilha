@@ -71,14 +71,14 @@ header{
     bottom: 1rem !important;
     right: 2rem !important;
     font-size: 35px !important;
-    border: 1px solid #4c0070 !important;
+    border: 2px solid #4c0070 !important;
     background-color: #4c0070 !important;
     color: #ffffff !important;
 }
 
 .button-float:hover {
     background-color: #ffffff !important;
-    border: #4c79d3 !important;
+    border: 2px solid #4c79d3 !important;
     color: #4c79d3 !important;
 }
 
