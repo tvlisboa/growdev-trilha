@@ -58,6 +58,30 @@ header{
     margin: 20px 10px 10px 0;
 }
 
+.button-cancel{
+    border-radius: 10px !important;
+}
+
+.button-float {
+    border-radius: 100% !important;
+    height: 60px !important;
+    width: 60px !important;
+    position: fixed !important;
+    padding: 0 !important;
+    bottom: 1rem !important;
+    right: 2rem !important;
+    font-size: 35px !important;
+    border: 1px solid #4c0070 !important;
+    background-color: #4c0070 !important;
+    color: #ffffff !important;
+}
+
+.button-float:hover {
+    background-color: #ffffff !important;
+    border: #4c79d3 !important;
+    color: #4c79d3 !important;
+}
+
 
 .link-default{
     color: #4e0070;
