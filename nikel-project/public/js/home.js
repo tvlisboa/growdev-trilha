@@ -33,6 +33,7 @@ document.getElementById("transaction-form").addEventListener("submit", function 
     myModal.hide();
     getCashIn();
     getCashOut();
+    getTotal();
 
     alert("Lançamento adicionado com sucesso.")
 });
@@ -56,6 +57,7 @@ function checkLogged() {
     }
     getCashIn();
     getCashOut();
+    getTotal();
 }
 
 function logout() {
