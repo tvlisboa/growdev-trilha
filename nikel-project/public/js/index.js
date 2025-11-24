@@ -14,7 +14,8 @@ document.getElementById("login-forms").addEventListener("submit", function (e) {
     const account = getAccount(email);
 
     if (!account) {
-        alert("Verifique o usuário ou senha informados.")
+        alert("Verifique o usuário ou senha informados.");
+        return;
     }
 
     if (account) {
@@ -24,7 +25,6 @@ document.getElementById("login-forms").addEventListener("submit", function (e) {
         }
 
         saveSession(email, checkSession);
-
         window.location.href = "home.html";
     }
 })
@@ -47,7 +47,7 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     }
 
     saveAccount({
-        login: email,
+        email: email,
         password: password,
         transactions: []
     });
@@ -58,18 +58,18 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
 
 function checkLogged() {
     if (session) {
-        session.setItem("logged", session);
+        sessionStorage.setItem("logged", session);
         logged = session;
     }
     if (logged) {
-        saveSession(logged, session);
+        saveSession(logged, true);
         window.location.href = "home.html";
     }
 }
 
 //salvar cadastro do usuario
 function saveAccount(data) {
-    localStorage.setItem(data.login, JSON.stringify(data));
+    localStorage.setItem(data.email, JSON.stringify(data));
 }
 
 function saveSession(data, saveSession) {

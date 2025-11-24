@@ -53,10 +53,8 @@ function checkLogged() {
 function logout() {
     sessionStorage.removeItem("logged");
     localStorage.removeItem("session");
-
     window.location.href = "index.html";
 }
-
 
 function getTransactions() {
     const transactions = data.transactions;
@@ -73,17 +71,17 @@ function getTransactions() {
             transactionsHTML += `
             <tr>
                 <th scope="row">${item.date}</th>
-                <td>${item.value.toFixed(2)}</td>
+                <td>R$ ${item.value.toFixed(2)}</td>
                 <td>${type}</td>
                 <td>${item.description}</td>
             </tr>
-        `
-        })
+            `;
+        });
     }
 
     document.getElementById('transactions-list').innerHTML = transactionsHTML;
 }
 
 function saveData(data) {
-    localStorage.setItem(data.email, JSON.stringify(data));
+    localStorage.setItem(logged, JSON.stringify(data));
 }
