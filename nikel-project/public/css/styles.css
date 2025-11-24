@@ -43,6 +43,7 @@ header{
     color: #ffffff;
     width: 50%;
     margin: 0 25%;
+    padding: 5px;
 }
 
 .button-login:hover, .button-default:hover{
