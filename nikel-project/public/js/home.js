@@ -96,8 +96,8 @@ function getCashIn() {
                                                         ${cashIn[index].date}
                                                     </div>
                                             </div>
-                                    </div>
-                             </div>
+                                </div>
+                        </div>
             </div>
         `
     }
@@ -134,10 +134,10 @@ function getCashOut() {
                                                     <div class="col-12 col-md-3 d-flex justify-content-end">
                                                         ${cashIn[index].date}
                                                     </div>
-                                            </div>
-                                    </div>
-                             </div>
-            </div>
+                                        </div>
+                                </div>
+                </div>
+        </div>
         `
     }
     document.getElementById(`cash-out-list`).innerHTML = cashInHtml;
